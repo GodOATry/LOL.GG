@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.example.lol_gg";
+option java_multiple_files = true;
+
+message UserData {
+    string kind = 1;
+    string localId = 2;
+    string email = 3;
+    string displayName = 4;
+    string idToken = 5;
+    bool registered = 6;
+    string refreshToken = 7;
+    string expiresIn = 8;
+}

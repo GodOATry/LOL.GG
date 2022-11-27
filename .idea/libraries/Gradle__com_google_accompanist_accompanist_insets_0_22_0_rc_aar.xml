@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.accompanist:accompanist-insets:0.22.0-rc@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/26629e5fc9bbfd903740e99aba38fb72/transformed/accompanist-insets-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f267895dbb3e919ad390a4aa981beebc/transformed/accompanist-insets-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b462ea8a98354402372580d9040ab0f8/transformed/accompanist-insets-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4eb2635d193d787311b706e33737b8be/transformed/accompanist-insets-0.22.0-rc/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e541a996cd5b891b8b392d458b0b5640/transformed/accompanist-insets-0.22.0-rc/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4eb2635d193d787311b706e33737b8be/transformed/accompanist-insets-0.22.0-rc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4eb2635d193d787311b706e33737b8be/transformed/accompanist-insets-0.22.0-rc/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-insets/0.22.0-rc/969b4d42876806050ae1da7c2da45ea3419d27bf/accompanist-insets-0.22.0-rc-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-insets/0.22.0-rc/eb46ed54b4fdde462628495a81ed8571e59c4b24/accompanist-insets-0.22.0-rc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

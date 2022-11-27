@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.accompanist:accompanist-swiperefresh:0.19.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/05489ce6966de602cb9db591a8ab5bf6/transformed/accompanist-swiperefresh-0.19.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cfef9e9f12895e96cd0584e00a868f8c/transformed/accompanist-swiperefresh-0.19.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fe877a7407dec5b6a62465070c82dd16/transformed/accompanist-swiperefresh-0.19.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/80906781ce041c93457b505d4b871efc/transformed/accompanist-swiperefresh-0.19.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eba233e07fd4c46d8f21f34a57f68398/transformed/accompanist-swiperefresh-0.19.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/80906781ce041c93457b505d4b871efc/transformed/accompanist-swiperefresh-0.19.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/80906781ce041c93457b505d4b871efc/transformed/accompanist-swiperefresh-0.19.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-swiperefresh/0.19.0/2a286bdbd5ae4c61becf0a252b96bbd44329cf7f/accompanist-swiperefresh-0.19.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-swiperefresh/0.19.0/98047937ec9856ef1f6674aec1ca2d9ce8b9bf36/accompanist-swiperefresh-0.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

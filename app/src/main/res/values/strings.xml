@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Lol_GG</string>
+    <string name="Select_Region">Select Region</string>
+    <string name="Iron">Iron</string>
+    <string name="Bronze">Bronze</string>
+    <string name="Silver">Silver</string>
+    <string name="Gold">Gold</string>
+    <string name="Platinum">Platinum</string>
+    <string name="Diamond">Diamond</string>
+    <string name="Master">Master</string>
+    <string name="Grandmaster">Grandmaster</string>
+    <string name="Challenger">Challenger</string>
+    <string name="HttpException">Ups coś poszło nie tak! Spróbuj ponownie później</string>
+    <string name="validateUserNameError">Please input a valid Username</string>
+    <string name="validateEmailError">Please input a valid email</string>
+    <string name="validatePasswordError">Must contain number, capital letter, special character and be longer than 8 </string>
+    <string name="validateConfirmPasswordError">Passwords must be equal</string>
+    <string name="createAnAccount">Create an Account</string>
+
+    <string name="userName">Username</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="go_to_login">Przejdź do logowania!</string>
+    <string name="have_account">Masz już konto?</string>
+    <string name="register">Register</string>
+    <string name="successful_registration">Congratulations you have successfully created your account!</string>
+    <string name="successful_sign_in">Congratulations you have successfully signed in!</string>
+    <string name="unsuccessful_registration">Ups we couldn\'t create your account! Try again later!</string>
+    <string name="unsuccessful_sign_in">Ups we couldn\'t sign you in! Try again later!</string>
+    }
+</resources>

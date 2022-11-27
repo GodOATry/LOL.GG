@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1046020548965",
+    "firebase_url": "https://lol-gg-8a39d-default-rtdb.firebaseio.com",
+    "project_id": "lol-gg-8a39d",
+    "storage_bucket": "lol-gg-8a39d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046020548965:android:5c69cb25a230cf3222d98c",
+        "android_client_info": {
+          "package_name": "com.example.lol_gg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046020548965-n1t3do5gtg6m0ja5rkfcma6fagt7ij94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ4mJi7k89e4QBA44bHLctoJWcqPwvWSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046020548965-n1t3do5gtg6m0ja5rkfcma6fagt7ij94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
