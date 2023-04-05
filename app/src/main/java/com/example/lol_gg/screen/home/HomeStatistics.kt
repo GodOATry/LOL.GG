@@ -15,7 +15,6 @@ import com.example.lol_gg.Dictionary
 import com.example.lol_gg.ui.theme.WhiteAlpha06
 import com.example.lol_gg.ui.theme.WhiteAlpha08
 
-
 @Composable
 fun HomeStatistics(homeViewModel: HomeViewModel) {
     val dictionary = Dictionary()
@@ -48,13 +47,13 @@ fun HomeStatistics(homeViewModel: HomeViewModel) {
                                     userWins,
                                     userLoses
                                 )
-                            }%)", color = WhiteAlpha06
+                            }%)",
+                            color = WhiteAlpha06
                         )
                     }
                 }
             }
-            //TODO Graph LG-12
+            // TODO Graph LG-12
         }
-
     }
 }

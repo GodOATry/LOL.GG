@@ -19,7 +19,8 @@ fun BottomNavigationOwn(navController: NavController) {
     val items = listOf(
         BottomNavItem.Profile,
         BottomNavItem.Home,
-        BottomNavItem.Calculator
+        BottomNavItem.Calculator,
+        BottomNavItem.Esport
     )
 
     BottomNavigation(

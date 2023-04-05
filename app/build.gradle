@@ -124,4 +124,11 @@ dependencies {
     implementation "com.google.protobuf:protobuf-javalite:3.21.2"
     implementation 'com.google.protobuf:protobuf-kotlin-lite:3.21.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'com.beust:klaxon:5.5'
+
+    implementation("androidx.room:room-runtime:2.4.0")
+    annotationProcessor("androidx.room:room-compiler:2.4.0")
+    kapt("androidx.room:room-compiler:2.4.0")
+    implementation("androidx.room:room-ktx:2.4.0")
+    implementation("org.jsoup:jsoup:1.11.3")
 }

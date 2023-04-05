@@ -15,3 +15,7 @@ val WhiteAlpha04 = Color.White.copy(0.4f)
 val WhiteAlpha01 = Color.White.copy(0.1f)
 val win = Color(41, 41, 194, 255)
 val lose = Color(175, 16, 48, 255)
+val winAlpha06 = Color(35, 33, 34, 255)
+val loseAlpha06 = Color(29, 27, 28, 255)
+val SettingsIconsColor = Color(138, 27, 49, 255)
+

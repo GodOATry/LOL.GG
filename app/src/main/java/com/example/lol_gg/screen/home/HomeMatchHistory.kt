@@ -18,9 +18,6 @@ import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.example.lol_gg.Dictionary
 import com.example.lol_gg.ui.theme.*
-import java.math.BigDecimal
-import java.math.RoundingMode
-
 
 @Composable
 fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
@@ -44,8 +41,6 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
     val trinket = participant.item6
     val gameDuration = info.gameDuration
 
-
-
     if (champion.isNotEmpty()) {
         val rune1 = participant.perks.styles[0].style
         val rune2 = participant.perks.styles[1].style
@@ -63,7 +58,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .size(80.dp)
                             .clip(CircleShape)
                             .background(WhiteAlpha01),
-                        painter = rememberAsyncImagePainter(model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/champion/${champion}.png"),
+                        painter = rememberAsyncImagePainter(model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/champion/$champion.png"),
                         contentDescription = null
                     )
                     Column(modifier = Modifier.padding(start = 1.dp)) {
@@ -108,22 +103,18 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                     }
                     Column(modifier = Modifier.padding(start = 5.dp)) {
                         Text(
-                            text = "${kills}/${deaths}/${assists}",
+                            text = "$kills/$deaths/$assists",
                             color = WhiteAlpha08,
                             fontWeight = FontWeight.Bold,
                             fontSize = 24.sp
                         )
                         Text(
-                            text = "KDA : " + BigDecimal(((kills + assists).toDouble() / deaths.toDouble())).setScale(
-                                2,
-                                RoundingMode.HALF_EVEN
-                            ).toString(),
+                            text = "KDA : " + homeViewModel.calculateKDA(kills, deaths, assists),
                             color = WhiteAlpha04,
                             fontSize = 18.sp,
                             modifier = Modifier.padding(top = 12.dp)
                         )
                     }
-
                 }
                 Row(modifier = Modifier.padding(start = 8.dp, end = 8.dp)) {
                     AsyncImage(
@@ -131,7 +122,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item0}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item0.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -139,7 +130,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item1}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item1.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -147,7 +138,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item2}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item2.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -155,7 +146,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item3}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item3.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -163,7 +154,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item4}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item4.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -171,7 +162,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${item5}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$item5.png",
                         contentDescription = null
                     )
                     AsyncImage(
@@ -179,7 +170,7 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                             .padding(start = 2.dp)
                             .size(40.dp)
                             .clip(CircleShape),
-                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${trinket}.png",
+                        model = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/$trinket.png",
                         contentDescription = null
                     )
                 }
@@ -217,10 +208,10 @@ fun HomeMatchHistory(homeViewModel: HomeViewModel, listPosition: Int) {
                 Text(
                     text = homeViewModel.calculateGameDuration(gameDuration),
                     color = Color.White,
-                    modifier = Modifier.padding(4.dp), maxLines = 1
+                    modifier = Modifier.padding(4.dp),
+                    maxLines = 1
                 )
             }
-
         }
     }
     Spacer(

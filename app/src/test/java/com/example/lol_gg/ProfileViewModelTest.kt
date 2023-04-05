@@ -1,6 +1,6 @@
 package com.example.lol_gg
 
-import com.example.lol_gg.screen.home.profile.ProfileViewModel
+import com.example.lol_gg.screen.profile.ProfileViewModel
 import io.kotest.*
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations

@@ -29,7 +29,6 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeScreen(homeViewModel: HomeViewModel) {
-
     var sizeImage by remember { mutableStateOf(IntSize.Zero) }
     val context = LocalContext.current
     val isProgressBarVisible = homeViewModel.isProgressBarVisible
@@ -62,11 +61,19 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
                         .makeText(context, context.getString(event.messageId), Toast.LENGTH_SHORT)
                         .show()
                 }
+                is HomeEvents.SaveSummonerNameSuccessful -> {
+                    Toast
+                        .makeText(context, context.getString(event.messageId), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                is HomeEvents.SaveSummonerNameUnSuccessful -> {
+                    Toast
+                        .makeText(context, context.getString(event.messageId), Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
         }
     }
-
-
 
     ModalBottomSheetLayout(
         sheetState = sheetState,
@@ -76,80 +83,75 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
             .background(MainBackground2)
     ) {
         Box() {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .navigationBarsPadding()
-            ) {
-                item {
-                    Box {
-                        Image(
-                            painterResource(R.drawable.kayle),
-                            "Kayle image",
-                            modifier = Modifier.onGloballyPositioned {
-                                sizeImage = it.size
-                            })
-                        Box(
-                            modifier = Modifier
-                                .matchParentSize()
-                                .background(gradient)
-                        )
-                        Row(
-                            modifier = Modifier
-                                .align(Alignment.BottomStart)
-                                .padding(bottom = 8.dp, start = 8.dp)
-                        ) {
-                            if (summonerName.isNotEmpty()) {
-                                Image(
-                                    painter = painterResource(R.drawable.g2_icon),
-                                    contentDescription = "icon",
-                                    contentScale = ContentScale.Crop,
-                                    modifier = Modifier
-                                        .size(100.dp)
-                                        .clip(CircleShape)
-                                )
-                                Text(
-                                    text = summonerName,
-                                    fontSize = 38.sp,
-                                    color = Color.White,
-                                    modifier = Modifier.padding(start = 8.dp, top = 8.dp),
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box {
+                    Image(
+                        painterResource(R.drawable.kayle),
+                        "Kayle image",
+                        modifier = Modifier.onGloballyPositioned {
+                            sizeImage = it.size
                         }
-
-                    }
-
-                }
-                item {
-                    SearchData(homeViewModel) {
-                        coroutineScope.launch {
-                            if (sheetState.isVisible) sheetState.hide()
-                            else sheetState.show()
+                    )
+                    Box(
+                        modifier = Modifier
+                            .matchParentSize()
+                            .background(gradient)
+                    )
+                    Row(
+                        modifier = Modifier
+                            .align(Alignment.BottomStart)
+                            .padding(bottom = 8.dp, start = 8.dp)
+                    ) {
+                        if (summonerName.isNotEmpty()) {
+                            Image(
+                                painter = painterResource(R.drawable.g2_icon),
+                                contentDescription = "icon",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .size(100.dp)
+                                    .clip(CircleShape)
+                            )
+                            Text(
+                                text = summonerName,
+                                fontSize = 38.sp,
+                                color = Color.White,
+                                modifier = Modifier.padding(start = 8.dp, top = 8.dp),
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
                 }
-                item {
-                    HomeStatistics(homeViewModel = homeViewModel)
-                }
-                items(homeViewModel.gameInfo.value.size) { listPosition ->
-                    HomeMatchHistory(homeViewModel = homeViewModel, listPosition)
-                }
-                item {
-                    Spacer(modifier = Modifier.height(50.dp))
+
+                SearchData(homeViewModel) {
+                    coroutineScope.launch {
+                        if (sheetState.isVisible) {
+                            sheetState.hide()
+                        } else {
+                            sheetState.show()
+                        }
+                    }
                 }
 
-
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 10.dp)
+                        .navigationBarsPadding()
+                ) {
+                    item {
+                        HomeStatistics(homeViewModel = homeViewModel)
+                    }
+                    items(homeViewModel.gameInfo.value.size) { listPosition ->
+                        HomeMatchHistory(homeViewModel = homeViewModel, listPosition)
+                    }
+                    item {
+                        Spacer(modifier = Modifier.height(50.dp))
+                    }
+                }
             }
-
             if (isProgressBarVisible.value) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
-
         }
     }
 }
-
-
-
-

@@ -1,11 +1,6 @@
 package com.example.lol_gg.api
 
-import com.example.lol_gg.api.repositories.DataStoreRepository
-import com.example.lol_gg.api.repositories.DataStoreRepositoryImplementation
-import com.example.lol_gg.api.repositories.HomeScreenRepository
-import com.example.lol_gg.api.repositories.HomeScreenRepositoryImplementation
-import com.example.lol_gg.api.repositories.ProfileScreenRepository
-import com.example.lol_gg.api.repositories.ProfileScreenRepositoryImplementation
+import com.example.lol_gg.api.repositories.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,6 +16,8 @@ abstract class BinarApiModule {
     abstract fun dataStoreFunction(dataStoreRepository: DataStoreRepositoryImplementation): DataStoreRepository
     @Binds
     abstract fun ProfileScreenRepositoryFunction(profileScreenRepository: ProfileScreenRepositoryImplementation): ProfileScreenRepository
+    @Binds
+    abstract fun RoomFunction(roomRepository: RoomRepositoryImplementation): RoomRepository
 }
 
 

@@ -6,6 +6,7 @@ import com.example.lol_gg.api.modules.IoDispatcher
 import com.example.lol_gg.data.ReturnDataFromSigningIn
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
@@ -14,6 +15,8 @@ import javax.inject.Inject
 interface DataStoreRepository {
     suspend fun saveUserToDataStore(user: ReturnDataFromSigningIn)
     suspend fun getUserFromDataStore(): Flow<ReturnDataFromSigningIn?>
+    suspend fun removeUserFromDataStore()
+    suspend fun isUserSignedIn(): Boolean
 }
 
 class DataStoreRepositoryImplementation @Inject constructor(
@@ -51,4 +54,14 @@ class DataStoreRepositoryImplementation @Inject constructor(
                 expiresIn = user.expiresIn
             )
         }.flowOn(ioDispatcher)
+
+    override suspend fun removeUserFromDataStore() {
+        userProtoDataStore.updateData { currentUserData ->
+            currentUserData.toBuilder().clear().build()
+        }
+    }
+    override suspend fun isUserSignedIn(): Boolean {
+        val result = userProtoDataStore.data.first()
+        return result.idToken != ""
+    }
 }

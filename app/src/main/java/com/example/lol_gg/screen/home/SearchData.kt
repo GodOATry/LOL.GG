@@ -24,12 +24,10 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.lol_gg.R
 import com.example.lol_gg.ui.theme.SecondaryColor
 import com.example.lol_gg.ui.theme.WhiteAlpha01
 import com.example.lol_gg.ui.theme.WhiteAlpha04
 import com.example.lol_gg.ui.theme.WhiteAlpha08
-
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -56,7 +54,8 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
                 onDone = {
                     keyboardController?.hide()
                     focusManager.clearFocus()
-                }),
+                }
+            ),
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = SecondaryColor,
                 focusedIndicatorColor = WhiteAlpha08,
@@ -65,9 +64,9 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
                 unfocusedIndicatorColor = WhiteAlpha04,
                 placeholderColor = WhiteAlpha08,
                 focusedLabelColor = WhiteAlpha08,
-                unfocusedLabelColor = WhiteAlpha08,
+                unfocusedLabelColor = WhiteAlpha08
 
-                ),
+            ),
             textStyle = TextStyle.Default.copy(fontSize = 20.sp),
             singleLine = true,
             onValueChange = { enteredSummonerName -> userSummonerName = enteredSummonerName },
@@ -77,20 +76,22 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
                     tint = WhiteAlpha08,
                     contentDescription = ""
                 )
-            },
+            }
 
-            )
+        )
         Column(modifier = Modifier.fillMaxWidth()) {
-            Box(modifier = Modifier
-                .height(40.dp)
-                .padding(top = 7.dp, start = 5.dp)
-                .wrapContentWidth()
-                .border(
-                    BorderStroke(1.dp, WhiteAlpha04),
-                    shape = RoundedCornerShape(4.dp)
-                )
-                .background(SecondaryColor)
-                .clickable { regionOnClickUnit() }) {
+            Box(
+                modifier = Modifier
+                    .height(40.dp)
+                    .padding(top = 7.dp, start = 5.dp)
+                    .wrapContentWidth()
+                    .border(
+                        BorderStroke(1.dp, WhiteAlpha04),
+                        shape = RoundedCornerShape(4.dp)
+                    )
+                    .background(SecondaryColor)
+                    .clickable { regionOnClickUnit() }
+            ) {
                 Row(modifier = Modifier.align(Alignment.Center)) {
                     Text(
                         text = chosenServer,
@@ -107,7 +108,7 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
             Row(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(start = 8.dp, top = 7.dp),
+                    .padding(start = 8.dp, top = 7.dp)
             ) {
                 Icon(
                     imageVector = Icons.Filled.Download,
@@ -120,10 +121,16 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
                             BorderStroke(1.dp, WhiteAlpha04),
                             shape = RoundedCornerShape(4.dp)
                         )
-                        .then(if (userSummonerName.text.isNotEmpty()) Modifier.clickable {
-                            homeViewModel.downloadStatistics(userSummonerName.text)
-                            focusManager.clearFocus()
-                        } else Modifier)
+                        .then(
+                            if (userSummonerName.text.isNotEmpty()) {
+                                Modifier.clickable {
+                                    homeViewModel.downloadStatistics(userSummonerName.text)
+                                    focusManager.clearFocus()
+                                }
+                            } else {
+                                Modifier
+                            }
+                        )
                 )
                 Icon(
                     imageVector = Icons.Filled.Save,
@@ -137,18 +144,17 @@ fun SearchData(homeViewModel: HomeViewModel, regionOnClickUnit: () -> Unit) {
                             shape = RoundedCornerShape(4.dp)
                         )
                         .clickable {
-                            Toast
-                                .makeText(
-                                    context,
-                                    "Opcja będzie dostępna w przyszłości",
-                                    Toast.LENGTH_LONG
-                                )
-                                .show()
+                            homeViewModel.saveSummonerName(userSummonerName.text)
+//                            Toast
+//                                .makeText(
+//                                    context,
+//                                    "Opcja będzie dostępna w przyszłości",
+//                                    Toast.LENGTH_LONG
+//                                )
+//                                .show()
                         }
                 )
-
             }
         }
-
     }
 }
